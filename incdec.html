@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        background-color: grey;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+    }
+    .container{
+        background-color: aquamarine;
+        width: 300px;
+        height: 200px;;
+        align-items: center;
+        margin-top: 200px;
+        border-radius: 4px;
+        border: 2px,solid,black;
+    }
+    button{
+        margin-top: 20px;
+        font-size:medium;
+        box-sizing: border-box;
+       
+    }
+    .counter,p{
+        font-size: larger;
+        font-family: 'Courier New', Courier, monospace;
+        margin-top: 30px;
+    }
+    .display{
+        margin-top: 20px;
+        font-size: larger;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="counter">
+            <p id="count">0</p>
+        </div>
+
+        <button onclick="incre()">increment</button>
+        <button onclick="decre()">decrement</button>
+        <div class="display">
+            <div class="increment">increment:<span id="inc"></span></div> 
+             <div class="decrement">decrement:  <span id="dec"></span></div>
+        </div>
+
+    </div>
+    <script>
+        let c=0,ci=0,cd=0;
+        let count=document.querySelector("#count");
+        let incCount=document.querySelector("#inc");
+        let decCount=document.querySelector("#dec");
+         function incre() {
+            c++;
+            ci = (ci >= 10) ? 0 : ci + 1;
+            update();
+        }
+        function decre() {
+            c = c > 0 ? c - 1 : 0;
+            cd = (cd >= 10) ? 0 : cd + 1;
+            update();
+        }
+        function update() {
+            count.textContent = c;
+            incCount.textContent = ci;
+            decCount.textContent = cd;
+        }
+    </script>
+</body>
+</html>
